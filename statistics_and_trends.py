@@ -33,7 +33,7 @@ df
 # In[4]:
 
 
-data=df[['age' , 'income' , 'spending_score' , 'membership_years' , 'purchase_frequency' , 'last_purchase_amount']]
+data = df[['age' , 'income' , 'spending_score' , 'membership_years' , 'purchase_frequency' , 'last_purchase_amount']]
 data
 
 
@@ -65,7 +65,7 @@ plt.show()
 
 
 fig, ax = plt.subplots(figsize=(9, 9))
-xf = df.groupby('preferred_category')['income'].mean().plot(kind = 'barh', color = 'orange', title = 'Mean Income Per Category', legend = False)
+xf = df.groupby('preferred_category')['income'].mean().plot(kind='barh', color='orange', title='Mean Income Per Category', legend=False)
 xf.bar_label(xf.containers[0], label_type='edge')
 
 
@@ -74,15 +74,15 @@ xf.bar_label(xf.containers[0], label_type='edge')
 
 plt.rcParams.update({'font.size': 14})
 plt.figure(figsize=(15, 10))
-values, bins, bars = plt.hist(df['income'], color ='gold', edgecolor ='blue')
+values, bins, bars=plt.hist(df['income'], color='gold', edgecolor='blue')
 plt.xlabel("Income")
 plt.ylabel("Number of Customers")
 plt.title('Income Distrubtion')
 plt.bar_label(bars, fontsize=20, color='navy')
 
 min_ylim, max_ylim = plt.ylim()
-plt.text(df['income'].mean()*0.7, max_ylim*1.0, 'Mean: {:.2f}'.format(df['income'].mean()),fontsize = 14, color = 'red')
-plt.text(df['income'].median()*1.1, max_ylim*1.0, 'Median: {:.2f}'.format(df['income'].median()),fontsize = 14, color = 'red')
+plt.text(df['income'].mean()*0.7, max_ylim*1.0, 'Mean: {:.2f}'.format(df['income'].mean()), fontsize=14, color='red')
+plt.text(df['income'].median()*1.1, max_ylim*1.0, 'Median: {:.2f}'.format(df['income'].median()), fontsize=14, color='red')
 
 plt.margins(x=0.01, y=0.1)
 plt.show()
@@ -99,13 +99,13 @@ tags
 
 
 
-fig = plt.figure(figsize = (7,7))
+fig = plt.figure(figsize=(7,7))
 index = [0, 1]
-colors = ('red' , 'green' , 'gold' , 'purple' , 'olive')
+colors = ('red','green','gold','purple','olive')
 wp = {'linewidth': 2, 'edgecolor': 'black'}
 tags = df['preferred_category'].value_counts()
 explode = (0.1, 0.1, 0.1, 0.1, 0.1)
-tags.plot(kind ='pie', autopct ='%1.1f%%', shadow = True, colors = colors,startangle = 90, wedgeprops = wp, explode = explode, label = '')
+tags.plot(kind='pie', autopct='%1.1f%%', shadow=True, colors=colors, startangle=90, wedgeprops=wp, explode=explode, label='')
 plt.title('Distribution of Preferred Categories')
 
 
@@ -113,13 +113,13 @@ plt.title('Distribution of Preferred Categories')
 
 
 
-fig = plt.figure(figsize = (7,7))
+fig = plt.figure(figsize=(7,7))
 index = [0, 1]
-colors = ('red', 'green' , 'gold')
+colors = ('red','green','gold')
 wp = {'linewidth': 2, 'edgecolor': 'black'}
 tags = df['gender'].value_counts()
 explode = (0.1, 0.1, 0.1)
-tags.plot(kind = 'pie', autopct ='%1.1f%%', shadow = True, colors = colors, startangle = 90, wedgeprops = wp, explode=explode, label ='')
+tags.plot(kind='pie', autopct='%1.1f%%', shadow=True, colors=colors, startangle=90, wedgeprops=wp, explode=explode, label='')
 plt.title('Distribution of gender')
 
 
@@ -136,7 +136,7 @@ round(data.corr(), 4)
 
 plt.rcParams.update({'font.size': 14})
 plt.figure(figsize=(15, 10))
-sns.heatmap(round(data.corr(), 4), cmap ='coolwarm', annot = True)
+sns.heatmap(round(data.corr(), 4), cmap='coolwarm', annot=True)
 
 
 # **Four Main Statistical Moments**
