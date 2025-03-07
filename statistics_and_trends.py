@@ -7,6 +7,7 @@
 
 # In[1]:
 
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,7 +20,7 @@ style.use('ggplot')
 # In[2]:
 
 
-df = pd.read_csv('https://github.com/gabriel2lucky1990/statistivs_and_trend/blob/main/data.csv')
+df = pd.read_csv('data.csv')
 
 # In[3]:
 
