@@ -45,11 +45,11 @@ x = data['age']
 y = data['income']
 fig, ax = plt.subplots(figsize=(9, 9))
 
-from scipy import stats
-gradient, intercept, r_value, p_value, std_err = stats.linregress(x,y)
+
+gradient, intercept, r_value, p_value, std_err = stats.linregress(x, y)
 mn = np.min(x)
 mx = np.max(x)
-x1 = np.linspace(mn,mx,500)
+x1 = np.linspace(mn, mx, 500)
 y1 = gradient * x1 + intercept
 plt.plot(x, y, 'og')
 plt.plot(x1, y1, '-r')
@@ -81,8 +81,8 @@ plt.title('Income Distrubtion')
 plt.bar_label(bars, fontsize=20, color='navy')
 
 min_ylim, max_ylim = plt.ylim()
-plt.text(df['income'].mean()*0.7, max_ylim*1.0, 'Mean: {:.2f}'.format(df['income'].mean()),fontsize=14,color='red')
-plt.text(df['income'].median()*1.1, max_ylim*1.0, 'Median: {:.2f}'.format(df['income'].median()),fontsize=14,color='red')
+plt.text(df['income'].mean()*0.7, max_ylim*1.0, 'Mean: {:.2f}'.format(df['income'].mean()),fontsize = 14, color = 'red')
+plt.text(df['income'].median()*1.1, max_ylim*1.0, 'Median: {:.2f}'.format(df['income'].median()),fontsize = 14, color = 'red')
 
 plt.margins(x=0.01, y=0.1)
 plt.show()
@@ -91,7 +91,7 @@ plt.show()
 # In[8]:
 
 
-tags=df['preferred_category'].value_counts()
+tags = df['preferred_category'].value_counts()
 tags
 
 
@@ -99,12 +99,12 @@ tags
 
 
 
-fig = plt.figure(figsize=(7,7))
-index = [0,1]
+fig = plt.figure(figsize = (7,7))
+index = [0, 1]
 colors = ('red' , 'green' , 'gold' , 'purple' , 'olive')
-wp = {'linewidth':2, 'edgecolor': 'black'}
+wp = {'linewidth': 2, 'edgecolor': 'black'}
 tags = df['preferred_category'].value_counts()
-explode = (0.1,0.1,0.1,0.1,0.1)
+explode = (0.1, 0.1, 0.1, 0.1, 0.1)
 tags.plot(kind ='pie', autopct ='%1.1f%%', shadow = True, colors = colors,startangle = 90, wedgeprops = wp, explode = explode, label = '')
 plt.title('Distribution of Preferred Categories')
 
@@ -113,10 +113,10 @@ plt.title('Distribution of Preferred Categories')
 
 
 
-fig = plt.figure(figsize=(7,7))
-index = [0,1]
+fig = plt.figure(figsize = (7,7))
+index = [0, 1]
 colors = ('red', 'green' , 'gold')
-wp = {'linewidth':2, 'edgecolor': 'black'}
+wp = {'linewidth': 2, 'edgecolor': 'black'}
 tags = df['gender'].value_counts()
 explode = (0.1, 0.1, 0.1)
 tags.plot(kind = 'pie', autopct ='%1.1f%%', shadow = True, colors = colors, startangle = 90, wedgeprops = wp, explode=explode, label ='')
@@ -128,7 +128,7 @@ plt.title('Distribution of gender')
 # In[11]:
 
 
-round(data.corr(),4)
+round(data.corr(), 4)
 
 
 # In[12]:
@@ -136,7 +136,7 @@ round(data.corr(),4)
 
 plt.rcParams.update({'font.size': 14})
 plt.figure(figsize=(15, 10))
-sns.heatmap(round(data.corr(),4), cmap='coolwarm', annot=True)
+sns.heatmap(round(data.corr(), 4), cmap ='coolwarm', annot = True)
 
 
 # **Four Main Statistical Moments**
