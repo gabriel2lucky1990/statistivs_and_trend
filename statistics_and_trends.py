@@ -33,7 +33,7 @@ df
 # In[4]:
 
 
-data=df[['age','income','spending_score','membership_years','purchase_frequency','last_purchase_amount']]
+data=df[['age' , 'income' , 'spending_score' , 'membership_years' , 'purchase_frequency' , 'last_purchase_amount']]
 data
 
 
@@ -41,18 +41,18 @@ data
 
 
 plt.rcParams.update({'font.size': 14})
-x=data['age']
-y=data['income']
+x = data['age']
+y = data['income']
 fig, ax = plt.subplots(figsize=(9, 9))
 
 from scipy import stats
 gradient, intercept, r_value, p_value, std_err = stats.linregress(x,y)
-mn=np.min(x)
-mx=np.max(x)
-x1=np.linspace(mn,mx,500)
-y1=gradient*x1+intercept
-plt.plot(x,y,'og')
-plt.plot(x1,y1,'-r')
+mn = np.min(x)
+mx = np.max(x)
+x1 = np.linspace(mn,mx,500)
+y1 = gradient * x1 + intercept
+plt.plot(x, y, 'og')
+plt.plot(x1, y1, '-r')
 plt.xlabel('Age')
 plt.ylabel('Income')
 plt.title('regression plot of Income Vs. Age')
@@ -65,7 +65,7 @@ plt.show()
 
 
 fig, ax = plt.subplots(figsize=(9, 9))
-xf = df.groupby('preferred_category')['income'].mean().plot(kind='barh', color='orange',title='Mean Income Per Category',legend=False)
+xf = df.groupby('preferred_category')['income'].mean().plot(kind = 'barh', color = 'orange', title = 'Mean Income Per Category', legend = False)
 xf.bar_label(xf.containers[0], label_type='edge')
 
 
@@ -74,7 +74,7 @@ xf.bar_label(xf.containers[0], label_type='edge')
 
 plt.rcParams.update({'font.size': 14})
 plt.figure(figsize=(15, 10))
-values, bins, bars = plt.hist(df['income'], color='gold',edgecolor='blue')
+values, bins, bars = plt.hist(df['income'], color ='gold', edgecolor ='blue')
 plt.xlabel("Income")
 plt.ylabel("Number of Customers")
 plt.title('Income Distrubtion')
@@ -98,26 +98,28 @@ tags
 # In[9]:
 
 
+
 fig = plt.figure(figsize=(7,7))
 index = [0,1]
-colors = ('red','green','gold','purple','olive')
-wp={'linewidth':2, 'edgecolor': 'black'}
-tags=df['preferred_category'].value_counts()
+colors = ('red' , 'green' , 'gold' , 'purple' , 'olive')
+wp = {'linewidth':2, 'edgecolor': 'black'}
+tags = df['preferred_category'].value_counts()
 explode = (0.1,0.1,0.1,0.1,0.1)
-tags.plot(kind='pie', autopct='%1.1f%%', shadow=True, colors=colors,startangle=90, wedgeprops=wp, explode=explode, label='')
+tags.plot(kind ='pie', autopct ='%1.1f%%', shadow = True, colors = colors,startangle = 90, wedgeprops = wp, explode = explode, label = '')
 plt.title('Distribution of Preferred Categories')
 
 
 # In[10]:
 
 
+
 fig = plt.figure(figsize=(7,7))
 index = [0,1]
-colors = ('red','green','gold')
-wp={'linewidth':2, 'edgecolor': 'black'}
-tags=df['gender'].value_counts()
-explode = (0.1,0.1,0.1)
-tags.plot(kind='pie', autopct='%1.1f%%', shadow=True, colors=colors,startangle=90, wedgeprops=wp, explode=explode, label='')
+colors = ('red', 'green' , 'gold')
+wp = {'linewidth':2, 'edgecolor': 'black'}
+tags = df['gender'].value_counts()
+explode = (0.1, 0.1, 0.1)
+tags.plot(kind = 'pie', autopct ='%1.1f%%', shadow = True, colors = colors, startangle = 90, wedgeprops = wp, explode=explode, label ='')
 plt.title('Distribution of gender')
 
 
@@ -146,12 +148,12 @@ sns.heatmap(round(data.corr(),4), cmap='coolwarm', annot=True)
 # In[13]:
 
 
-print('Mean Age =', round(np.mean(data['age']),2))
-print('Mean income =', round(np.mean(data['income']),2))
-print('Mean spending score =', round(np.mean(data['spending_score']),2))
-print('Mean membership years =', round(np.mean(data['membership_years']),2))
-print('Mean purchase frequency =', round(np.mean(data['purchase_frequency']),2))
-print('Mean last purchase amount =', round(np.mean(data['last_purchase_amount']),2))
+print('Mean Age =', round(np.mean(data['age']),  2))
+print('Mean income =', round(np.mean(data['income']), 2))
+print('Mean spending score =', round(np.mean(data['spending_score']), 2))
+print('Mean membership years =', round(np.mean(data['membership_years']), 2))
+print('Mean purchase frequency =', round(np.mean(data['purchase_frequency']), 2))
+print('Mean last purchase amount =', round(np.mean(data['last_purchase_amount']), 2))
 
 
 # **Variance**
@@ -161,12 +163,12 @@ print('Mean last purchase amount =', round(np.mean(data['last_purchase_amount'])
 # In[14]:
 
 
-print('variance of Age =', round(np.var(data['age']),2))
-print('variance of income =', round(np.var(data['income']),2))
-print('variance of spending score =', round(np.var(data['spending_score']),2))
-print('variance of membership years =', round(np.var(data['membership_years']),2))
-print('variance of purchase frequency =', round(np.var(data['purchase_frequency']),2))
-print('variance of last purchase amount =', round(np.var(data['last_purchase_amount']),2))
+print('variance of Age =', round(np.var(data['age']), 2))
+print('variance of income =', round(np.var(data['income']), 2))
+print('variance of spending score =', round(np.var(data['spending_score']), 2))
+print('variance of membership years =', round(np.var(data['membership_years']), 2))
+print('variance of purchase frequency =', round(np.var(data['purchase_frequency']), 2))
+print('variance of last purchase amount =', round(np.var(data['last_purchase_amount']), 2))
 
 
 # **Skewness**
@@ -176,12 +178,12 @@ print('variance of last purchase amount =', round(np.var(data['last_purchase_amo
 # In[15]:
 
 
-print('Skewness of Age =', round(stats.skew(data['age']),2))
-print('Skewness of income =', round(stats.skew(data['income']),2))
-print('Skewness of spending score =', round(stats.skew(data['spending_score']),2))
-print('Skewness of membership years =', round(stats.skew(data['membership_years']),2))
-print('Skewness of purchase frequency =', round(stats.skew(data['purchase_frequency']),2))
-print('Skewness of last purchase amount =', round(stats.skew(data['last_purchase_amount']),2))
+print('Skewness of Age =', round(stats.skew(data['age']), 2))
+print('Skewness of income =', round(stats.skew(data['income']), 2))
+print('Skewness of spending score =', round(stats.skew(data['spending_score']), 2))
+print('Skewness of membership years =', round(stats.skew(data['membership_years']), 2))
+print('Skewness of purchase frequency =', round(stats.skew(data['purchase_frequency']), 2))
+print('Skewness of last purchase amount =', round(stats.skew(data['last_purchase_amount']), 2))
 
 
 # **Kurtosis**
@@ -191,10 +193,10 @@ print('Skewness of last purchase amount =', round(stats.skew(data['last_purchase
 # In[16]:
 
 
-print('Skewness of Age =', round(stats.kurtosis(data['age']),2))
-print('Skewness of income =', round(stats.kurtosis(data['income']),2))
-print('Skewness of spending score =', round(stats.kurtosis(data['spending_score']),2))
-print('Skewness of membership years =', round(stats.kurtosis(data['membership_years']),2))
-print('Skewness of purchase frequency =', round(stats.kurtosis(data['purchase_frequency']),2))
-print('Skewness of last purchase amount =', round(stats.kurtosis(data['last_purchase_amount']),2))
+print('Skewness of Age =', round(stats.kurtosis(data['age']), 2))
+print('Skewness of income =', round(stats.kurtosis(data['income']), 2))
+print('Skewness of spending score =', round(stats.kurtosis(data['spending_score']), 2))
+print('Skewness of membership years =', round(stats.kurtosis(data['membership_years']), 2))
+print('Skewness of purchase frequency =', round(stats.kurtosis(data['purchase_frequency']), 2))
+print('Skewness of last purchase amount =', round(stats.kurtosis(data['last_purchase_amount']), 2))
 
