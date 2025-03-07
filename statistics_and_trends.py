@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# **First Section**
-
-# =========================================================================
-
-# In[1]:
-
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -199,4 +189,3 @@ print('Skewness of spending score =', round(stats.kurtosis(data['spending_score'
 print('Skewness of membership years =', round(stats.kurtosis(data['membership_years']), 2))
 print('Skewness of purchase frequency =', round(stats.kurtosis(data['purchase_frequency']), 2))
 print('Skewness of last purchase amount =', round(stats.kurtosis(data['last_purchase_amount']), 2))
-
