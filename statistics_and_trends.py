@@ -19,7 +19,7 @@ style.use('ggplot')
 # In[2]:
 
 
-df = pd.read_csv('data.csv')
+df = pd.read_csv('https://github.com/gabriel2lucky1990/statistivs_and_trend/blob/main/data.csv')
 
 # In[3]:
 
